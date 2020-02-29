@@ -3,4 +3,23 @@ Recursion
 1) define what Recursion is and how it can be used.
 2) understand two essential components of Recursion.
 3) visualise the callstack to better debug and understand
-Recursion.
+   Recursion.
+4) use helper method Recursion and pure Recursion methods to
+   solve more complex problems.
+
+Recursion?
+A process (in our case function) that calls itself.
+
+js in-build functions uses Recursion:
+- JSON.parse/ JSON.stringify
+- document.getElementbyid and DOM traversal algorithms.
+- object traversal. 
+
+difference between normal functions and recursive functions:
+- You're used to functions being pushed on the call stack and
+  popped off when they are done.
+- When we are writing recursive functions, we keep pushing new
+  functions onto the call stack.
+
+###### BASE CASE in Recursion  #######
+The condition where Recursion ends.
