@@ -1,0 +1,5 @@
+what is a class?
+A blueprint for creating objects with predefinded properties and methods.
+
+Instance methods:
+
