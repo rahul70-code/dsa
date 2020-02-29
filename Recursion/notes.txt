@@ -1,0 +1,6 @@
+Recursion
+
+1) define what Recursion is and how it can be used.
+2) understand two essential components of Recursion.
+3) visualise the callstack to better debug and understand
+Recursion.
