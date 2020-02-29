@@ -23,3 +23,5 @@ difference between normal functions and recursive functions:
 
 ###### BASE CASE in Recursion  #######
 The condition where Recursion ends.
+
+###### different input ######
