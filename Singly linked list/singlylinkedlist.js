@@ -114,6 +114,21 @@ class SinglyLinkedList {
     return removed;
   };
 
+  reverse() {
+    var node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    var next;
+    var prev = null;
+    for(var i=0;i < this.length; i++){
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    };
+    return this;
+  }
+
   transverse() {
     var current = this.head;
     while (current) {
@@ -128,24 +143,21 @@ list.push(99);
 list.push(65);
 list.push(64);
 list.push(76);
+
+
+
 // console.log(list)
 // list.insert(0,56);
-console.log(list)
-list.remove(1,65)
-console.log(list)
-
+// console.log(list)
+// list.remove(1,65)
+// console.log(list)
 // console.log(list.get(1))
 // list.insert(5,56);
 // console.log(list)
-
-
-
-
 // list.push("hello"); 
 // list.push("world");
 // list.push("bye");
 // list.push("<3!!");
-
 // console.log(list.get(2));
 // console.log(list.get(-2));
 // console.log(list.set(1,"byebye"))
@@ -158,7 +170,6 @@ console.log(list)
 // console.log(list);
 // list.unshift('talreja')
 // console.log(list);
-
 // console.log(list.shift());
 // console.log(list);
 // list.push('byes')

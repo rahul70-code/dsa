@@ -1,0 +1,4 @@
+Objectives
+1) construct doubly linked list.
+2) compare and contrast doubly , singly linked list.
+3) Build basic operations on doubly linked list.
