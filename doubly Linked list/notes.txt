@@ -2,3 +2,13 @@ Objectives
 1) construct doubly linked list.
 2) compare and contrast doubly , singly linked list.
 3) Build basic operations on doubly linked list.
+
+Almost identical to singly linked list except every node has
+another pointer to the previous node. 
+
+    ___ nxt ___  nxt___ nxt ___
+   |   |-->|   |-->|   |-->|   |
+ <-|12 |   | 9 |   | 5 |   | 14|--> null
+   |___|<--|___|<--|___|<--|___|
+ null |prev     prev    prev |
+      |______________________|
