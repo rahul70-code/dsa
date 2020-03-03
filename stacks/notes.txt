@@ -1,0 +1,32 @@
+Objectives:
+1) define what stack is
+2) Understand use cases of stack.
+3) Implement operations on stack datastructure.
+
+stacks:
+- data collection
+- abstract datastructure
+
+#### LIFO data structure ####
+
+- stack of plates
+- stack of books
+
+     ____     ____     ____     ____
+    |    |   |    |   |    |   |    |
+ <--| 12 |<--|  2 |<--| 22 |<--| 7  | 
+    |____|   |____|   |____|   |____|
+       |__________________________|   
+     LAST       SIZE = 4        FIRST
+
+## example of stack ###
+1. recursion => callback stack => factorial example
+
+# where stacks are used ##
+1. managing functions invocations.
+2. Undo/ redo  example - photoshop/ editing tools
+3. Routing (history objects) is treated lika a stack.
+4. Trees/ Graphs algorithms.
+
+### Stack using array
+### stack using linked list

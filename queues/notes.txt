@@ -1,0 +1,12 @@
+objectives
+1. FIFO data structure.
+
+how we use them in programming?
+- background tasks.
+- uploading and downloading
+- printing
+
+first thing added in is first thing removed.
+
+enqueue - adding
+dequeue - removing

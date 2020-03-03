@@ -25,3 +25,6 @@ difference between Linked list Vs Array
  2. connected via nodes with a next | 2. Insertion and deletion can be expensive.
     pointer.                        | 
  3. Random access is not allowed    | 3. can be quickly accessed at a specific index.
+
+
+reverse singly linkedlist
