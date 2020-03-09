@@ -37,16 +37,16 @@ class Queue {
 };
 
 var q = new Queue();
-q.enqueue('first')
-console.log(q)
-q.enqueue('second')
-console.log(q)
-q.enqueue('third')
-console.log(q)
+// q.enqueue('first')
+// console.log(q)
+// q.enqueue('second')
+// console.log(q)
+// q.enqueue('third')
+// console.log(q)
 
-q.dequeue()
-console.log(q)
-q.dequeue()
-console.log(q)
-q.dequeue()
-console.log(q)
+// q.dequeue()
+// console.log(q)
+// q.dequeue()
+// console.log(q)
+// q.dequeue()
+// console.log(q)

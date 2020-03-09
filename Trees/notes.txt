@@ -1,0 +1,21 @@
+1. Trees
+2. Binary Trees
+3. Binary search Trees
+
+Transversing the tree.
+1. Breath first search (BFS)
+2. Depth first search (DFS)
+
+Depth first search
+1. InOrder
+2. PreOrder
+3. PostOrder
+
+BFS:
+visit every node of same level. working horizontally.
+- create a queue and a variable to stores the values of nodes visited.
+- Place the root node in the queue.
+- loop as long as there is anything in the queue
+ - dequeue a node from the queue and push the value of the node into the
+ variable that stores the nodes.
+ - If there is a left property /
