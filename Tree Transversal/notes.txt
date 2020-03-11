@@ -1,8 +1,0 @@
-Transversing the tree.
-1. Breath first search (BFS)
-2. Depth first search (DFS)
-
-Depth first search
-1. InOrder
-2. PreOrder
-3. PostOrder

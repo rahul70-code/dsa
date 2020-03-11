@@ -109,7 +109,19 @@ class BinarySearchTree {
         };
         traverse(current);
         return data;
-    }
+    };
+
+    DFSInOrder() {
+        var data = [];
+        var current = this.root;
+        function traverse(node) {
+            if(node.left) traverse(node.left);
+            data.push(node.val);
+            if(node.right) traverse(node.right);
+        };
+        traverse(current);
+        return data
+    };
 }
 
 var tree = new BinarySearchTree();
@@ -121,7 +133,8 @@ tree.insert(15);
 tree.insert(20);
 // tree.insert(3);
 console.log(tree.DFSPreOrder());
-console.log(tree.DFSPostOrder())
+console.log(tree.DFSPostOrder());
+console.log(tree.DFSInOrder());
 
 // tree.insert(9);
 // tree.insert(12);

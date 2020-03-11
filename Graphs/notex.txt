@@ -1,0 +1,16 @@
+objectives:
+
+
+
+
+Graph
+Nodes + connections
+
+vertex = Node
+edge = connection betweeen the Nodes
+
+directed VS Undirected Graphs
+weighted VS unweighted Graphs
+
+adjacency matrix
+adjacency list

@@ -1,0 +1,16 @@
+Objectives:
+1. what is binary heap?
+2. compare and contrast min and max heaps.
+3. implement basic methods on heaps.
+4. Understand where heaps are used in real world and what 
+other data structures can be constructed from heaps.
+
+binary heap?
+very similar to binary search trees but with some different rules
+
+In a maxBinaryHeap, parent nodes are always larger than child nodes
+In a minBinaryHeap, parent nodes are always smaller than child nodes
+
+why we need to know heap?
+priority queues
+graph traversal algorithms

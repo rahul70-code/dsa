@@ -19,3 +19,7 @@ visit every node of same level. working horizontally.
  - dequeue a node from the queue and push the value of the node into the
  variable that stores the nodes.
  - If there is a left property /
+
+DFS:
+PreOrder:
+- 
