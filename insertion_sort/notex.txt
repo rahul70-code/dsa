@@ -1,0 +1,10 @@
+- start by picking the second element in the array.
+- Now compare the second element with the one before it and swap if neccessary.
+- continue to the next element and if it is in the incorrect order, iterate through
+the sorted portion to place the element in the correct place.
+- repeat until the array is sorted. 
+
+
+
+big 0-> when array is unsorted => O(n2)
+        when array is sorted => O(n)

@@ -26,4 +26,4 @@ Graph Transversal uses:
 4. shortest path algorithms
     a. gps navigation.
     b. solving mazes.
-    c. AI shortest path to win the games.
+    c. AI shortest path to win the games. 
