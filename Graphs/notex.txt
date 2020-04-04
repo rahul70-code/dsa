@@ -1,7 +1,9 @@
 objectives:
-
-
-
+- explain what the Graph is.
+- compare and contrast different types of Graphs and their use cases in real world.
+- implement the Graph using adjacency list.
+- Transverse through the Graphs using BFS, DFS.
+- compare and contrast Graph Transversal algorithms.
 
 Graph
 Nodes + connections
@@ -9,8 +11,19 @@ Nodes + connections
 vertex = Node
 edge = connection betweeen the Nodes
 
+weighted Graph = value assigned to edges
+
 directed VS Undirected Graphs
 weighted VS unweighted Graphs
 
 adjacency matrix
 adjacency list
+
+Graph Transversal uses:
+1. peer to peer networking
+2. web crawlers.
+3. finding closest/ matches/ recommendations.
+4. shortest path algorithms
+    a. gps navigation.
+    b. solving mazes.
+    c. AI shortest path to win the games.
