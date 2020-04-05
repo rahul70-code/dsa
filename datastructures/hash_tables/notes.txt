@@ -1,0 +1,6 @@
+Objectives
+- what the hash table is?
+- define what a hashing algorithm ?
+- discuss what makes a good hashing algorithm?
+- understand how collision occur in hash table
+- handle collision using seperate chaining or linear probing.
