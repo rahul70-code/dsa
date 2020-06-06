@@ -35,6 +35,7 @@ class Student {
 
 let firstStudent = new Student("Rahul","Talreja",1);
 let secondStudent = new Student("Soham","Railkar", 2);
+let thirdStudent = new Student('yogesh','patil',3)
 // firstStudent.grade = 3;
 
 // console.log(firstStudent.grade)
