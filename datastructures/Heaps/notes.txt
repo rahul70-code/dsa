@@ -14,3 +14,9 @@ In a minBinaryHeap, parent nodes are always smaller than child nodes
 why we need to know heap?
 priority queues
 graph traversal algorithms
+
+
+array implementation of heap
+for any index of array n
+The left child is stored at 2n+1
+The right child is stored at 2n+2

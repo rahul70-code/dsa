@@ -136,6 +136,27 @@ class SinglyLinkedList {
       current = current.next;
     }
   }
+
+  middleOfLinkedList(){
+    let fast, slow = this.head;
+    while (fast && fast.next) {
+        fast = fast.next.next;
+        slow = slow.next;
+    }
+    return slow;
+  }
+
+  count(){
+    if(this.head == null) return 0;
+    return 1 + this.count();
+    // var current = this.head;
+    // var count = 0; 
+    // while(current) {
+    //       current = current.next;
+    //       count++;          
+    // };
+    // return count;
+};
 }
 
 var list = new SinglyLinkedList();
@@ -143,8 +164,9 @@ list.push(99);
 list.push(65);
 list.push(64);
 list.push(76);
-
-
+list.push(45);
+// console.log(list.middleOfLinkedList());
+console.log(list.count())
 
 // console.log(list)
 // list.insert(0,56);
