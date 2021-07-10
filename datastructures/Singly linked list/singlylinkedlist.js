@@ -15,7 +15,7 @@ class SinglyLinkedList {
   }
 
   push(val) {
-    var newNode = new Node(val);
+    let newNode = new Node(val);
     if (!this.head) {
       this.head = newNode;
       this.tail = this.head;
@@ -30,8 +30,8 @@ class SinglyLinkedList {
   pop() {
     if (!this.head) return undefined;
 
-    var current = this.head;
-    var newTail = current;
+    let current = this.head;
+    let newTail = current;
     while (current.next) {
       newTail = current;
       current = current.next;
@@ -48,7 +48,7 @@ class SinglyLinkedList {
 
   shift() {
     if (!this.head) return undefined;
-    var temp = this.head;
+    let temp = this.head;
     this.head = this.head.next;
     this.length--;
     if (this.length === 0) {
@@ -58,45 +58,51 @@ class SinglyLinkedList {
   };
 
   unshift(val) {
-      var newNode = new Node(val);
-      if(!this.head) {
-          this.head = newNode;
-          this.tail = this.head;
-      } else {
-          newNode.next = this.head;
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
           this.head = newNode;   
-      };
-      this.length++;
-      return this;
+      this.head = newNode;
+    };
+    this.length++;
+    return this;
   };
 
-  get(index){
-      if(index < 0 || index >= this.length) return null;
-      var current = this.head;
-      var count = 0; 
-      while(count !== index) {
-            current = current.next;
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let current = this.head;
+    let count = 0;
+      let count = 0; 
+    let count = 0;
+    while (count !== index) {
+      current = current.next;
+      count++;
             count++;          
-      };
-      return current;
+      count++;
+    };
+    return current;
   };
 
-  set(index,val) {
-      var foundNode = this.get(index);
-      if(foundNode){
-          foundNode.val = val;
-          return true
-      };
-      return false;
+  set(index, val) {
+    let foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
+      return true
+    };
+    return false;
   };
 
   insert(index, val) {
-    if(index<0 || index > this.length) return false;
-    if(index === this.length) return !!this.push(val);
-    if(index === 0) return !!this.unshift(val);
-    var newNode = new Node(val);
-    var prev = this.get(index-1);
-    var temp = prev.next;
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(val);
+    if (index === 0) return !!this.unshift(val);
+    let newNode = new Node(val);
+    let prev = this.get(index - 1);
+    let temp = prev.next;
     prev.next = newNode;
     newNode.next = temp;
     this.length++;
@@ -104,23 +110,23 @@ class SinglyLinkedList {
   };
 
   remove(index) {
-    if(index < 0 || index >= this.length) return undefined;
-    if(index === this.length - 1) return this.pop();
-    if(index === 0) return this.shift();
-    var prevNode = this.get(index-1);
-    var removed = prevNode.next;
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === this.length - 1) return this.pop();
+    if (index === 0) return this.shift();
+    let prevNode = this.get(index - 1);
+    let removed = prevNode.next;
     prevNode.next = removed.next;
     this.length--;
     return removed;
   };
 
   reverse() {
-    var node = this.head;
+    let node = this.head;
     this.head = this.tail;
     this.tail = node;
-    var next;
-    var prev = null;
-    for(var i=0;i < this.length; i++){
+    let next;
+    let prev = null;
+    for (let i = 0; i < this.length; i++) {
       next = node.next;
       node.next = prev;
       prev = node;
@@ -130,37 +136,37 @@ class SinglyLinkedList {
   }
 
   transverse() {
-    var current = this.head;
+    let current = this.head;
     while (current) {
       console.log(current.val);
       current = current.next;
     }
   }
 
-  middleOfLinkedList(){
+  middleOfLinkedList() {
     let fast, slow = this.head;
     while (fast && fast.next) {
-        fast = fast.next.next;
-        slow = slow.next;
+      fast = fast.next.next;
+      slow = slow.next;
     }
     return slow;
   }
 
-  count(){
-    if(this.head == null) return 0;
+  count() {
+    if (this.head == null) return 0;
     return 1 + this.count();
-    // var current = this.head;
-    // var count = 0; 
+    // let current = this.head;
+    // let count = 0; 
     // while(current) {
     //       current = current.next;
     //       count++;          
     // };
     // return count;
-};
+  };
 }
 
-var list = new SinglyLinkedList();
-list.push(99); 
+let list = new SinglyLinkedList();
+list.push(99);
 list.push(65);
 list.push(64);
 list.push(76);

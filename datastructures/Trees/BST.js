@@ -19,7 +19,7 @@ class BinarySearchTree {
     } else {
       var current = this.root;
       while (true) {
-        if(val === current.val) return undefined;
+        if (val === current.val) return undefined;
         if (val < current.val) {
           if (current.left === null) {
             current.left = newNode;
@@ -40,88 +40,88 @@ class BinarySearchTree {
   };
 
   find(val) {
-    if(this.root === null) return false;
+    if (this.root === null) return false;
     var current = this.root;
     var found = false;
-    while(current && !found) {
-        if(val < current.val) {
-            current = current.left;
-        } else if(val > current.val) {
-            current = current.right;
-        } else {
-            found = true;
-        }
+    while (current && !found) {
+      if (val < current.val) {
+        current = current.left;
+      } else if (val > current.val) {
+        current = current.right;
+      } else {
+        found = true;
+      }
     };
-    if(!found) return undefined;
+    if (!found) return undefined;
     return current;
   };
 
   // if return true or false while finding node
-//   find(val) {
-//     if(this.root === null) return false;
-//     var current = this.root;
-//     var found = false;
-//     while(current && !found) {
-//         if(val < current.val) {
-//             current = current.left;
-//         } else if(val > current.val) {
-//             current = current.right;
-//         } else {
-//             return true;
-//         }
-//     };
-//     return false;
-//   }
+  //   find(val) {
+  //     if(this.root === null) return false;
+  //     var current = this.root;
+  //     var found = false;
+  //     while(current && !found) {
+  //         if(val < current.val) {
+  //             current = current.left;
+  //         } else if(val > current.val) {
+  //             current = current.right;
+  //         } else {
+  //             return true;
+  //         }
+  //     };
+  //     return false;
+  //   }
 
-    BreathFirstSearch() {
-        var data = [], 
-            queue = [],
-            node = this.root;
-        queue.push(node);
-        while(queue.length) {
-            node = queue.shift();
-            data.push(node.val);
-            if(node.left) queue.push(node.left);
-            if(node.right) queue.push(node.right);
-        };
-        return data;
+  BreathFirstSearch() {
+    var data = [],
+      queue = [],
+      node = this.root;
+    queue.push(node);
+    while (queue.length) {
+      node = queue.shift();
+      data.push(node.val);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
     };
+    return data;
+  };
 
-    DFSPreOrder() {
-        var data = [];
-        var current = this.root;
-        function traverse(node) {
-            data.push(node.val);
-            if(node.left) traverse(node.left);
-            if(node.right) traverse(node.right);
-        };
-        traverse(current);
-        return data;
+  DFSPreOrder() {
+    var data = [];
+    var current = this.root;
+    function traverse(node) {
+      data.push(node.val);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
     };
+    traverse(current);
+    return data;
+  };
 
-    DFSPostOrder() {
-        var data = [];
-        var current = this.root;
-        function traverse(node) {
-            if(node.left) traverse(node.left);
-            if(node.right) traverse(node.right);
-            data.push(node.val);
-        };
-        traverse(current);
-        return data;
+  DFSPostOrder() {
+    var data = [];
+    var current = this.root;
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      data.push(node.val);
     };
+    traverse(current);
+    return data;
+  };
 
-    DFSInOrder() {
-        var data = [];
-        var current = this.root;
-        function traverse(node) {
-            if(node.left) traverse(node.left);
-            data.push(node.val);
-            if(node.right) traverse(node.right);
-        };
-        traverse(current);
-        return data
+  DFSInOrder() {
+    var data = [];
+    var current = this.root;
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      data.push(node.val);
+      if (node.right) traverse(node.right);
     };
+    traverse(current);
+    return data
+  };
 }
 
 var tree = new BinarySearchTree();
