@@ -31,15 +31,16 @@ function Stack() {
         console.log(this.storage)
     }
 
-    // this.min = function () {
-    //     return Math.min.apply(Math, collection)
-    //     // Math.min(...collection)
-    // }
+    this.min = function () {
+        return Math.min.apply(Math, collection)
+        // can do
+        // Math.min(...collection)
+    }
 
-    // this.max = function () {
-    //     return Math.max.apply(Math, collection)
-    //     // Math.max(...collection)
-    // }
+    this.max = function () {
+        return Math.max.apply(Math, collection)
+        // Math.max(...collection)
+    }
 }
 
 let stack = new Stack();

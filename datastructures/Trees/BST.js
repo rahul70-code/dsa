@@ -56,6 +56,8 @@ class BinarySearchTree {
     return current;
   };
 
+  remove() { }
+
   // if return true or false while finding node
   //   find(val) {
   //     if(this.root === null) return false;
@@ -122,6 +124,23 @@ class BinarySearchTree {
     traverse(current);
     return data
   };
+
+  findMin() {
+    let current = this.root;
+    while (current.left != null) {
+      current = current.left
+    };
+    return current.val;
+  }
+
+  findMax() {
+    let current = this.root;
+    while (current.right != null) {
+      current = current.right
+    };
+    return current.val;
+  }
+
 }
 
 var tree = new BinarySearchTree();
@@ -129,12 +148,14 @@ tree.insert(10);
 tree.insert(6);
 tree.insert(3);
 tree.insert(8);
-tree.insert(15);
 tree.insert(20);
+tree.insert(15);
 // tree.insert(3);
-console.log(tree.DFSPreOrder());
-console.log(tree.DFSPostOrder());
-console.log(tree.DFSInOrder());
+// console.log(tree.DFSPreOrder());
+// console.log(tree.DFSPostOrder());
+// console.log(tree.DFSInOrder());
+console.log(`Min node: ` + tree.findMin());
+console.log(`Max node: ` + tree.findMax());
 
 // tree.insert(9);
 // tree.insert(12);
