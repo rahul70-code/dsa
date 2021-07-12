@@ -23,3 +23,19 @@ visit every node of same level. working horizontally.
 DFS:
 PreOrder:
 - 
+
+
+
+Trie:
+In order to access a key (to recover its value, change it, or remove it), 
+the trie is traversed depth-first, following the links between nodes, which represent 
+each character in the key. 
+Application
+1. Common applications of tries include storing a predictive text or autocomplete dictionary 
+and implementing approximate matching algorithms,[8] such as those used in spell checking and
+ hyphenation[7] software. Such applications take advantage of a trie's ability to quickly search for, 
+ insert, and delete entries. However, if storing dictionary words is all that is required
+(i.e. there is no need to store metadata associated with each word), a minimal deterministic
+ acyclic finite state automaton (DAFSA) or radix tree would use less storage space than a trie. 
+This is because DAFSAs and radix trees can compress identical branches from the trie which correspond
+to the same suffixes (or parts) of different words being stored. 

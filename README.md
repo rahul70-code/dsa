@@ -4,4 +4,4 @@ Table of contents:
     a) JS classes
     b) instance methods
     c) class methods
-2. # dsa_js
+2. # dsa
