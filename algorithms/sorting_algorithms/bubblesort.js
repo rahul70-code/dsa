@@ -2,7 +2,7 @@ function bubbleSort(array) {
   if (array.length == 0 || array.length == 1) return array;
   for (var i = array.length; i>0; i--) {
     for (var j = 0; j < i-1; j++) {
-        console.log(array,array[j],array[j+1])
+       // console.log(array,array[j],array[j+1])
       if (array[j] > array[j+1]) {
         // swap
         var temp = array[j];
@@ -19,7 +19,7 @@ function bubbleSortOptimization(array) {
     for (var i = array.length; i>0; i--) {
         var noSwaps = true;
       for (var j = 0; j < i-1; j++) {
-          console.log(array,array[j],array[j+1])
+         // console.log(array,array[j],array[j+1])
         if (array[j] > array[j+1]) {
           // swap
           var temp = array[j];
@@ -33,4 +33,4 @@ function bubbleSortOptimization(array) {
     return array;
   }
 
-console.log(bubbleSortOptimization([12, 4, 44, 1, 23,45,55,77]));
+console.log(bubbleSort([12, 4, 44, 1, 23,45,55,77]));

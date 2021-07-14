@@ -1,0 +1,21 @@
+Selection sort
+- store the first element as the smallest value you've seen so far.
+- compare this item to the next item in the array until you find a smaller number.
+- if a smaller number is found, designate that smaller number to be the new minimum and
+continue until the end of the array.
+- if the minimum is not the value(index) you initially began with, swap the two values.
+
+https://visualgo.net/en/sorting
+
+Insertion sort
+- start by picking the second element in the array.
+- Now compare the second element with the one before it and swap if neccessary.
+- continue to the next element and if it is in the incorrect order, iterate through
+the sorted portion to place the element in the correct place.
+- repeat until the array is sorted. 
+
+
+
+big 0-> when array is unsorted => O(n2)
+        when array is sorted => O(n)
+
