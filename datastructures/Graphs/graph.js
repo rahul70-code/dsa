@@ -23,24 +23,50 @@ class Graph {
   };
 
   removeVertex(vertex) {
-    while(this.adjacencyList[vertex].length) {
-        const adjacentVertex = this.adjacencyList[vertex].pop();
-        this.removeEdge(vertex, adjacentVertex);
+    while (this.adjacencyList[vertex].length) {
+      const adjacentVertex = this.adjacencyList[vertex].pop();
+      this.removeEdge(vertex, adjacentVertex);
     }
     delete this.adjacencyList[vertex];
+  }
+
+  depthFirstRecursive(start) {
+    const result = [];
+    const visited = {};
+    const adjacencyList = this.adjacencyList;
+
+    (function dfs(vertex) {
+      if (!vertex) return null;
+      visited[vertex] = true;
+      result.push(vertex);
+      adjacencyList[vertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          return dfs(neighbor)
+        }
+      });
+    })(start)
+    return result;
   }
 }
 
 var g = new Graph();
-g.addVertex("rahul");
-g.addVertex("dilip");
-console.log(g.adjacencyList);
-g.addEdge("rahul", "dilip");
-console.log(g.adjacencyList);
-g.removeEdge("rahul", "dilip");
-console.log(g.adjacencyList);
-g.removeVertex('rahul');
-console.log(g.adjacencyList);
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
+g.addVertex("D")
+g.addVertex("E")
+g.addVertex("F")
 
-// console.log(g.adjacencyList.push('dilip'))
-// console.log(g.adjacencyList)
+g.addEdge("A", "B")
+g.addEdge("A", "C")
+g.addEdge("B", "D")
+g.addEdge("C", "E")
+g.addEdge("D", "E")
+g.addEdge("D", "F")
+g.addEdge("E", "F")
+
+
+let dfs = g.depthFirstRecursive("A");
+console.log(dfs)
+
+

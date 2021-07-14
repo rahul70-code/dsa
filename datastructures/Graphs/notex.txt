@@ -27,3 +27,7 @@ Graph Transversal uses:
     a. gps navigation.
     b. solving mazes.
     c. AI shortest path to win the games. 
+
+
+Visiting/Updating/Checking 
+each Vertex in a Graph
