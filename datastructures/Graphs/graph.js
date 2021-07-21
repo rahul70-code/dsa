@@ -38,6 +38,7 @@ class Graph {
     (function dfs(vertex) {
       if (!vertex) return null;
       visited[vertex] = true;
+      console.log("vis",visited)
       result.push(vertex);
       adjacencyList[vertex].forEach(neighbor => {
         if (!visited[neighbor]) {
@@ -66,7 +67,7 @@ g.addEdge("D", "F")
 g.addEdge("E", "F")
 
 
-let dfs = g.depthFirstRecursive("A");
+let dfs = g.depthFirstRecursive("C");
 console.log(dfs)
 
 

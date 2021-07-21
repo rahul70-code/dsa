@@ -141,22 +141,33 @@ class BinarySearchTree {
     return current.val;
   }
 
+  maxDepth(node = this.root) {
+    if(node == null) return 0;
+    else {
+      let leftDepth = this.maxDepth(node.left)
+      let rightDepth = this.maxDepth(node.right)
+      if(leftDepth>rightDepth) return leftDepth+1;
+      else  return rightDepth+1
+
+    }
+  }
+
 }
 
 var tree = new BinarySearchTree();
-tree.insert(10);
-tree.insert(6);
+tree.insert(1);
+tree.insert(2);
 tree.insert(3);
-tree.insert(8);
-tree.insert(20);
-tree.insert(15);
+tree.insert(4);
+tree.insert(5);
+// tree.insert(15);
 // tree.insert(3);
 // console.log(tree.DFSPreOrder());
 // console.log(tree.DFSPostOrder());
 // console.log(tree.DFSInOrder());
 console.log(`Min node: ` + tree.findMin());
 console.log(`Max node: ` + tree.findMax());
-
+console.log(tree.maxDepth())
 // tree.insert(9);
 // tree.insert(12);
 // tree.insert(14)
