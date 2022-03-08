@@ -30,6 +30,15 @@ class Graph {
     delete this.adjacencyList[vertex];
   }
 
+  printGraph() {
+    const adjacencyList = this.adjacencyList;
+    for (let k in adjacencyList) {
+      let concat = "";
+      for (let j of adjacencyList[k]) concat += j + " ";
+      console.log(k + " -> " + concat)
+    }
+  }
+
   depthFirstRecursive(start) {
     const result = [];
     const visited = {};
@@ -38,7 +47,7 @@ class Graph {
     (function dfs(vertex) {
       if (!vertex) return null;
       visited[vertex] = true;
-      console.log("vis",visited)
+      // console.log("vis",visited)
       result.push(vertex);
       adjacencyList[vertex].forEach(neighbor => {
         if (!visited[neighbor]) {
@@ -47,6 +56,42 @@ class Graph {
       });
     })(start)
     return result;
+  }
+
+  bfs(startingNode) {
+
+    // create a visited object
+    var visited = {};
+
+    // Create an object for queue
+    var q = [];
+
+    // add the starting node to the queue
+    visited[startingNode] = true;
+    q.push(startingNode);
+    console.log(q)
+    // loop until queue is element
+    while (q.length > 0) {
+      // get the element from the queue
+      var getQueueElement = q[0];
+
+      // passing the current vertex to callback function
+      console.log(getQueueElement);
+
+      // get the adjacent list for current vertex
+      var get_List = this.adjacencyList[getQueueElement];
+      console.log(get_List)
+      // loop through the list and add the element to the
+      // queue if it is not processed yet
+      // for (var i in get_List) {
+      //   var neigh = get_List[i];
+
+      //   if (!visited[neigh]) {
+      //     visited[neigh] = true;
+          q.pop();
+      //   }
+      // }
+    }
   }
 }
 
@@ -67,7 +112,9 @@ g.addEdge("D", "F")
 g.addEdge("E", "F")
 
 
-let dfs = g.depthFirstRecursive("C");
+let dfs = g.depthFirstRecursive("A");
 console.log(dfs)
-
+let bfs = g.bfs("A")
+// let print = g.printGraph()
+console.log(bfs)
 

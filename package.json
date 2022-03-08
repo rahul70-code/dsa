@@ -1,0 +1,23 @@
+{
+  "name": "dsa",
+  "version": "1.0.0",
+  "description": "Table of contents: 1. JS ECMA 2015 syntax     a) JS classes     b) instance methods     c) class methods 2. # dsa",
+  "main": "class.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahul70-code/dsa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahul70-code/dsa/issues"
+  },
+  "homepage": "https://github.com/rahul70-code/dsa#readme",
+  "dependencies": {
+    "queue": "^6.0.2"
+  }
+}
