@@ -1,5 +1,4 @@
-// peice of data - val
-// reference to next node
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -75,8 +74,6 @@ class SinglyLinkedList {
   get(index) {
     if (index < 0 || index >= this.length) return null;
     let current = this.head;
-    let count = 0;
-      let count = 0; 
     let count = 0;
     while (count !== index) {
       current = current.next;
@@ -165,51 +162,4 @@ class SinglyLinkedList {
   };
 }
 
-let list = new SinglyLinkedList();
-list.push(99);
-list.push(65);
-list.push(64);
-list.push(76);
-list.push(45);
-// console.log(list.middleOfLinkedList());
-console.log(list.count())
-
-// console.log(list)
-// list.insert(0,56);
-// console.log(list)
-// list.remove(1,65)
-// console.log(list)
-// console.log(list.get(1))
-// list.insert(5,56);
-// console.log(list)
-// list.push("hello"); 
-// list.push("world");
-// list.push("bye");
-// list.push("<3!!");
-// console.log(list.get(2));
-// console.log(list.get(-2));
-// console.log(list.set(1,"byebye"))
-// console.log(list.get(1))
-// console.log(list.shift());
-// console.log(list);
-// console.log(list.shift());
-// console.log(list);
-// list.unshift('rahul')
-// console.log(list);
-// list.unshift('talreja')
-// console.log(list);
-// console.log(list.shift());
-// console.log(list);
-// list.push('byes')
-// console.log(list.push('hello'))
-// console.log(list.push('bye'))
-// console.log(list.head.next)
-// console.log(list.head.next.next)
-// console.log(list.transverse());
-// console.log(list)
-// console.log(list.pop())
-// console.log(list)
-// console.log(list.pop())
-// console.log(list)
-// console.log(list.pop())
-// console.log(list)
+module.exports = SinglyLinkedList

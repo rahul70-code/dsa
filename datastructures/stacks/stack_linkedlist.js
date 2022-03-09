@@ -38,18 +38,7 @@ class Stack {
     }
 };
 
-var stack = new Stack();
-stack.push('first')
-stack.push('second')
-console.log(stack.push('third'))
-console.log(stack)
-stack.pop()
-console.log(stack)
-stack.pop()
-console.log(stack)
-stack.pop()
-console.log(stack)
-
+module.exports = Stack
 
 
 
