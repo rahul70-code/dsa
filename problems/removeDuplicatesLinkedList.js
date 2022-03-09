@@ -34,6 +34,8 @@ linkedlist.push(1)
 linkedlist.push(4)
 linkedlist.push(2)
 linkedlist.push(1)
+
+
 /**
  * LC82. Remove Duplicates from Sorted List II
  * 
