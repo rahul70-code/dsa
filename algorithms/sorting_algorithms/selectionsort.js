@@ -1,12 +1,13 @@
 function selectionSort(array) {
+    // find the min element index in array for every pass
+    // swap with ith element and repeat
     for(var i = 0;i<array.length;i++) {
         var min = i;
         for(var j=i+1;j<array.length;j++){
             if(array[j]<array[min]){
-                min = j;
+                min = j;    
             };
         };
-        // console.log(array)
         if(i !== min) {
             var temp = array[i];
             array[i] = array[min];

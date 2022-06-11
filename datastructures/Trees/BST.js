@@ -56,6 +56,13 @@ class BinarySearchTree {
     return current;
   };
 
+  search(key) {
+    let curr = this.root;
+    if (curr == null || curr.val == key) return root;
+    if (curr.val < key) return this.search(root.left, key);
+    else return this.search(root.right, key)
+  }
+
   remove() { }
 
   // if return true or false while finding node
@@ -76,6 +83,11 @@ class BinarySearchTree {
   //   }
 
   BreathFirstSearch() {
+    /**
+     * level wise insert nodes in queue root, left, right.
+     * push each node's value in array
+     * return array
+     */
     var data = [],
       queue = [],
       node = this.root;
@@ -88,6 +100,33 @@ class BinarySearchTree {
     };
     return data;
   };
+
+  reverseLevelOrder() {
+    let node = this.root;
+    /**
+     * 1. empty queue and stack
+     * 2. enque the root node in the queue
+     * 3. loop queue -> push the root into stack and their childrens
+     * 4. pop stack to get elements
+     */
+    let S = [], Q = [], result = [];
+    Q.push(node);
+    while (Q.length > 0) {
+      node = Q[0];
+      Q.shift();
+      S.push(node.val)
+      /* Enqueue right child */
+      if (node.right != null)
+        // NOTE: RIGHT CHILD IS ENQUEUED BEFORE LEFT
+        Q.push(node.right);
+
+      /* Enqueue left child */
+      if (node.left != null)
+        Q.push(node.left);
+    }
+    while(S.length > 0) result.push(S.pop())
+    return result;
+  }
 
   DFSPreOrder() {
     var data = [];
@@ -142,12 +181,12 @@ class BinarySearchTree {
   }
 
   maxDepth(node = this.root) {
-    if(node == null) return 0;
+    if (node == null) return 0;
     else {
       let leftDepth = this.maxDepth(node.left)
       let rightDepth = this.maxDepth(node.right)
-      if(leftDepth>rightDepth) return leftDepth+1;
-      else  return rightDepth+1
+      if (leftDepth > rightDepth) return leftDepth + 1;
+      else return rightDepth + 1
 
     }
   }
@@ -160,13 +199,15 @@ tree.insert(2);
 tree.insert(3);
 tree.insert(4);
 tree.insert(5);
+// console.log(tree.search(3));
+// console.log(tree.height(tree.root))
 // tree.insert(15);
 // tree.insert(3);
 // console.log(tree.DFSPreOrder());
 // console.log(tree.DFSPostOrder());
 // console.log(tree.DFSInOrder());
-console.log(`Min node: ` + tree.findMin());
-console.log(`Max node: ` + tree.findMax());
+// console.log(`Min node: ` + tree.findMin());
+// console.log(`Max node: ` + tree.findMax());
 console.log(tree.maxDepth())
 // tree.insert(9);
 // tree.insert(12);
@@ -175,8 +216,8 @@ console.log(tree.maxDepth())
 // tree.insert(15)
 
 // console.log(tree)
-// console.log(tree.BreathFirstSearch());
-
+console.log(tree.BreathFirstSearch());
+console.log(tree.reverseLevelOrder())
 // tree.root = new Node(13);
 // tree.root.left = new Node(11);
 // tree.root.right = new Node(15);

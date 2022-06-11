@@ -1,30 +1,10 @@
-function merge(arr1, arr2) {
-    let results = [];
-    var i = 0;
-    var j = 0;
-    while (i < arr1.length && j < arr2.length) {
-        if (arr2[j] > arr1[i]) {
-            results.push(arr1[i]);
-            i++;
-        } else {
-            results.push(arr2[j]);
-            j++;
-        };
-    };
-
-    while (i < arr1.length) {
-        results.push(arr1[i]);
-    };
-
-    while (j < arr2.length) {
-        results.push(arr2[j]);
+function merge(left, right) {
+    let arr = []
+    while(left.length && right.length) {
+        if(left[0] < right[0]) arr.push(left.shift())
+        else arr.push(right.shift())
     }
+    return [...arr, ...left, ...right]
+}
 
-    return results;
-};
-
-function mergeSort(arr) {
-
-};
-
-console.log(merge([12, 32, 1], [32, 44, 2]))
+console.log(merge([12, 32, 1], [32, 44, 2])) 
