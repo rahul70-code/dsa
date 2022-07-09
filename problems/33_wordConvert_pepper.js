@@ -1,4 +1,4 @@
-let string = "abc";
+let string = "better";
 let output = ["b2ter","be2er","bet2r","b3er","be3r","b4r"];
 
 

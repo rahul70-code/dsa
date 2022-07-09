@@ -191,6 +191,14 @@ class BinarySearchTree {
     }
   }
 
+  sumNodes(node = this.root) {
+    if(node == null) return 0;
+    let temp = node.val;
+    let sum = this.sumNodes(root.left) + this.sumNodes(root.right);
+    if(node.left !=0 || node.right != 0) node.val = sum;
+    return temp+sum;
+  }
+
 }
 
 var tree = new BinarySearchTree();
@@ -199,6 +207,7 @@ tree.insert(2);
 tree.insert(3);
 tree.insert(4);
 tree.insert(5);
+console.log(tree.sumNodes())
 // console.log(tree.search(3));
 // console.log(tree.height(tree.root))
 // tree.insert(15);
@@ -208,7 +217,7 @@ tree.insert(5);
 // console.log(tree.DFSInOrder());
 // console.log(`Min node: ` + tree.findMin());
 // console.log(`Max node: ` + tree.findMax());
-console.log(tree.maxDepth())
+// console.log(tree.maxDepth())
 // tree.insert(9);
 // tree.insert(12);
 // tree.insert(14)
@@ -216,8 +225,8 @@ console.log(tree.maxDepth())
 // tree.insert(15)
 
 // console.log(tree)
-console.log(tree.BreathFirstSearch());
-console.log(tree.reverseLevelOrder())
+// console.log(tree.BreathFirstSearch());
+// console.log(tree.reverseLevelOrder())
 // tree.root = new Node(13);
 // tree.root.left = new Node(11);
 // tree.root.right = new Node(15);
