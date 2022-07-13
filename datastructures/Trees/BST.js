@@ -207,7 +207,7 @@ tree.insert(2);
 tree.insert(3);
 tree.insert(4);
 tree.insert(5);
-console.log(tree.sumNodes())
+console.log(tree.BreathFirstSearch())
 // console.log(tree.search(3));
 // console.log(tree.height(tree.root))
 // tree.insert(15);

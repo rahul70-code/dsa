@@ -1,0 +1,28 @@
+Arrays
+6, 14, 21, 23, 25, 32, 36, 37, 41, 
+42, 43, 44, 46, 47, 48, 49, 54
+
+Strings
+10, 11, 12, 13, 16, 17, 18, 19, 20
+22, 27, 29, 30, 33, 57
+
+Matrix problems
+34 ,39, 45, 56 
+
+LinkedList
+3, 7, 40, 55, 59, 60
+
+Trees problems
+4, 38, 50, 51, 52
+
+stack and queues
+8, 9, 28, 43, 58
+
+hashtable
+5, 24, 48, 49, 53
+
+Recursion, Backtracking and DP
+35, 
+
+Design
+31
