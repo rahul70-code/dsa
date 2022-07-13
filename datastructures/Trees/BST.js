@@ -39,6 +39,21 @@ class BinarySearchTree {
     };
   };
 
+  // insertRec(root, val) {
+  //   if(root == null) {
+  //     root = new Node(val);
+  //     return root;
+  //   };
+  //   if(val < root.val) root.left = this.insertRec(root.left, val);
+  //   else if(val > root.val) root.right = this.insertRec(root.right, val);
+  //   return root;
+  // }
+
+  // insertRecursively(val) {
+  //      this.insertRec(this.root, val);
+  //      return this;
+  // }
+
   find(val) {
     if (this.root === null) return false;
     var current = this.root;
@@ -97,6 +112,28 @@ class BinarySearchTree {
       data.push(node.val);
       if (node.left) queue.push(node.left);
       if (node.right) queue.push(node.right);
+    };
+    return data;
+  };
+  BreathFirstSearchModified () {
+    /**
+     * level wise insert nodes in queue root, left, right.
+     * push each node's value in array
+     * return array
+     */
+    var data = [],
+      queue = [root]
+    while (queue.length) {
+      let qLen = queue.length;
+      let currLevel = []
+      for(let i=0;i<qLen;i++){
+        let curr = queue.shift();
+        if(curr.left) queue.push(curr.left)
+        if(curr.right) queue.push(curr.right)
+        currLevel.push(curr.val)
+      }
+      data.push(currLevel)
+
     };
     return data;
   };
