@@ -10,6 +10,34 @@
  * @param {number[]} preorder
  * @return {TreeNode}
  */
- var bstFromPreorder = function(preorder) {
-    
+
+ function helper(root, val) {
+    var current = root;
+    var newNode = new TreeNode(val);
+
+     while (true) {
+        if (val === current.val) return undefined;
+        if (val < current.val) {
+          if (current.left === null) {
+            current.left = newNode;
+            return val;
+          } else {
+            current = current.left;
+          }
+        } else if (val > current.val) {
+          if (current.right === null) {
+            current.right = newNode;
+            return val;
+          } else {
+            current = current.right;
+          }
+        };
+      };
+}
+
+var bstFromPreorder = function(preorder) {
+    let root = new TreeNode(preorder[0]);
+    preorder.shift()
+    preorder.forEach(v => helper(root, v))
+    return root;
 };
