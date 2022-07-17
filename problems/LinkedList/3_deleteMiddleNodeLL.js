@@ -1,4 +1,4 @@
-const LinkedList = require('../datastructures/Singly linked list/singlylinkedlist');
+const LinkedList = require('../../datastructures/Singly linked list/singlylinkedlist');
 let linkedList = new LinkedList();
 
 linkedList.deleteMiddleOfLinkedList = function (head) {
