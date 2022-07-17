@@ -78,7 +78,9 @@ class BinarySearchTree {
     else return this.search(root.right, key)
   }
 
-  remove() { }
+  remove(val) { 
+    
+  }
 
   // if return true or false while finding node
   //   find(val) {

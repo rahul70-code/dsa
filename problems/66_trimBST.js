@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/trim-a-binary-search-tree/
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -8,9 +10,10 @@
  */
 /**
  * @param {TreeNode} root
- * @param {number} target
+ * @param {number} low
+ * @param {number} high
  * @return {TreeNode}
  */
- var removeLeafNodes = function(root, target) {
+ var trimBST = function(root, low, high) {
     
 };

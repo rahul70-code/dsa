@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/recover-binary-search-tree/
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -8,9 +10,8 @@
  */
 /**
  * @param {TreeNode} root
- * @param {number} target
- * @return {TreeNode}
+ * @return {void} Do not return anything, modify root in-place instead.
  */
- var removeLeafNodes = function(root, target) {
+ var recoverTree = function(root) {
     
 };

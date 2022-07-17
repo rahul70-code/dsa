@@ -11,7 +11,7 @@
  * @return {TreeNode}
  */
 
- function helper(root, val) {
+ function insertIterative(root, val) {
     var current = root;
     var newNode = new TreeNode(val);
 
@@ -35,9 +35,20 @@
       };
 }
 
+function insertRecursive(root, val) {
+  if(root == null) {
+    root = new TreeNode(val);
+    return root;
+  }
+
+  if(val < root.val) root.left = insertRecursive(root.left, val)
+  else if(val > root.val) root.right = insertRecursive(root.right, val)
+  return root;
+}
+
 var bstFromPreorder = function(preorder) {
     let root = new TreeNode(preorder[0]);
     preorder.shift()
-    preorder.forEach(v => helper(root, v))
+    preorder.forEach(v => insertIterative(root, v))
     return root;
 };
