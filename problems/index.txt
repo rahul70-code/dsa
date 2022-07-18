@@ -7,7 +7,7 @@ Strings
 22, 27, 29, 30, 33, 57
 
 Matrix problems
-34 ,39, 45, 56 
+34 ,39, 45, 56, 80
 
 LinkedList
 3, 7, 40, 55, 59, 60
@@ -27,3 +27,6 @@ Recursion, Backtracking and DP
 
 Design
 31
+
+DFS and BFS
+80
