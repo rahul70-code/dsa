@@ -29,7 +29,11 @@
 };
 
 let searchBST = (root, val) => {
+    // loop till not null and value not equal to key
     while(root != null && root.val != val)
+        //  1. update root 
+        //  2. if root val is greater than val -> move left
+        //  3. if root val is less than val -> move right
         root = (root.val > val) ? root.left : root.right;
     return root;
 }

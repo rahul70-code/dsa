@@ -12,6 +12,10 @@
  * @return {TreeNode}
  */
  var removeLeafNodes = function(root, target) {
+    // create a parent node with root
+    // transverse till leaf node
+    // if right and left == null & target value meet -> parent left = null (child = -1) 
+    // else parent right == null
     const parent = new TreeNode(-1, root, null);
     
     const traverse = (r = root, p = parent, child = -1) => {
