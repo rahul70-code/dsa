@@ -48,6 +48,9 @@ console.log(minStack.top())
 console.log(minStack)
 console.log(minStack.getMin())
 
+
+// implement it using min as variable instead of array!!
+
 /**
  *  using JAVA
  *  class MinStack {

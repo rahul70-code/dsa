@@ -10,7 +10,8 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var minDepthDFS = function (root) {
+//  dfs
+var minDepth = function (root) {
     if (root == null) return 0;
     else {
         if (root.left == null && root.right == null) return 1;
