@@ -11,6 +11,8 @@
  * @param {number} k
  * @return {number}
  */
+
+// TC - O(H+k), SC - O(H) -> better
  var kthSmallestIterative = function(root, k) {
     let stack = [];
     while(root != null || stack.length > 0) {
@@ -26,7 +28,7 @@
     return root.val;
 };  
 
-// recursive
+// recursive, TC - O(N), SC - O(N)
 let arr = []
 var kthSmallest = function(root, k) {
     inOrderTransversal(root)
