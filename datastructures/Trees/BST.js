@@ -78,10 +78,7 @@ class BinarySearchTree {
     else return this.search(root.right, key)
   }
 
-  remove(val) { 
-    
-  }
-
+  remove(val) {
   // if return true or false while finding node
   //   find(val) {
   //     if(this.root === null) return false;
@@ -98,6 +95,8 @@ class BinarySearchTree {
   //     };
   //     return false;
   //   }
+  }
+
 
   BreathFirstSearch() {
     /**
@@ -117,7 +116,7 @@ class BinarySearchTree {
     };
     return data;
   };
-  BreathFirstSearchModified () {
+  BreathFirstSearchModified() {
     /**
      * level wise insert nodes in queue root, left, right.
      * push each node's value in array
@@ -128,10 +127,10 @@ class BinarySearchTree {
     while (queue.length) {
       let qLen = queue.length;
       let currLevel = []
-      for(let i=0;i<qLen;i++){
+      for (let i = 0; i < qLen; i++) {
         let curr = queue.shift();
-        if(curr.left) queue.push(curr.left)
-        if(curr.right) queue.push(curr.right)
+        if (curr.left) queue.push(curr.left)
+        if (curr.right) queue.push(curr.right)
         currLevel.push(curr.val)
       }
       data.push(currLevel)
@@ -163,7 +162,7 @@ class BinarySearchTree {
       if (node.left != null)
         Q.push(node.left);
     }
-    while(S.length > 0) result.push(S.pop())
+    while (S.length > 0) result.push(S.pop())
     return result;
   }
 
@@ -231,11 +230,11 @@ class BinarySearchTree {
   }
 
   sumNodes(node = this.root) {
-    if(node == null) return 0;
+    if (node == null) return 0;
     let temp = node.val;
     let sum = this.sumNodes(root.left) + this.sumNodes(root.right);
-    if(node.left !=0 || node.right != 0) node.val = sum;
-    return temp+sum;
+    if (node.left != 0 || node.right != 0) node.val = sum;
+    return temp + sum;
   }
 
 }

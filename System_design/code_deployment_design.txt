@@ -1,0 +1,58 @@
+1. building code
+2. deploying code
+*** system requirements***
+global aspect of the system
+1. systems located in one location or multiple locations?
+Ans - global level (5-10 locations globally, 100k machines)
+2. Internal system ?
+Ans - yes
+3. less Availability ? its ok?
+Ans - even though Internal system - this is specific case
+so, Availability - 
+every build - success/fail
+ship within 30 mins (entire deployment)
+2-3 nines
+4. how often deployment and biggest binary size?
+Ans - 
+  1) 100s of web apps, 1000s of times a day deployment, 
+  2) 10gb per file/binary
+5. engineers - write -> commit (sha) -> binary file
+6. Persist historical builds - for long period of time.
+
+**************************
+general idea - 2 main parts of system
+1. build the code.
+2. deploying the code.
+
+
+1. queuing mechanism FIFO - commits coming -> create job of building binary
+2. set of servers/workers take -> from Queue -> run and build into binary
+3. binary built -> store into storage -> blob storage (GCS - google)
+
+How to implement queue ds?
+1. In memory queue ds - not persist data if server failure - not an option
+2. SQL db - persistance storage - past jobs always be there
+sql table - our queue - 
+every job - a row
+take job - from table and deque them
+
+columns in table?
+tables - job_queue
+
+job_queue - id (primary_key) | name(binary name)| SHA | createdAt (timestamp - time when build was enqueued) | status (running/queued/success/failed/canceled)
+
+how job works? 
+- check timestamp and status (queued) = oldest timestamp and status = queued -> take up the job in queue
+
+multiple workers? - concurruncy proof? 
+100 workers - all looking for job
+- fact is sql db - ACID transactions - 100s of workers able to perform read/write without worrying about concurruncy issue.
+single worker take up job from sql table (queue)
+** SQL Query **
+SELECT * from job_queue where status = "queued" AND ORDER BY createdAt ASC LIMIT 1;
+UPDATE job_queue SET status = "running" where id = "1";
+
+if not jobs or all jobs running ? - RollBack
+INDEX - status and createdAt  - query quick
+
+
