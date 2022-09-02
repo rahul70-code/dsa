@@ -12,31 +12,34 @@ class Queue {
         this.size = 0;
     };
 
-    enqueue(val) {
-        var newNode = new Node(val);
-        if(!this.first) {
-            this.first = newNode;
-            this.last = newNode;
-        } else {
-            this.last.next = newNode;
-            this.last = newNode;
-        };
-        return ++this.size;
-    };
+    enqueue(data) {
+        const newNode = new Node(data);
+    
+        if (!this.first) this.first = newNode;
+        else this.last.next = newNode;
+    
+        this.last = newNode;
+        this.size++;
+    
+        return this.size;
+      }
 
     dequeue() {
-        if(!this.first) return null;
-        var temp = this.first;
-        if(this.first === this.last) {
-            this.last = null;
-        } 
-        this.first = this.first.next;
+        if (!this.first) return null;
+    
+        const removedNode = this.first;
+        this.first = removedNode.next;
         this.size--;
-        return temp;
-    };
+    
+        if (!this.size) this.last = null;
+    
+        return removedNode.data;
+      }
 };
 
-var q = new Queue();
+// var q = new Queue();
+
+module.exports = Queue
 // q.enqueue('first')
 // console.log(q)
 // q.enqueue('second')

@@ -16,6 +16,7 @@ function calculateSpanBrute(price, n) {
     return ans;
 }
 
+// Using stack
 function calculateSpan(price, n) {
     let ans = [];
     let stack = [];

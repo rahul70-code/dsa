@@ -1,0 +1,75 @@
+Core rides api
+two sides 
+    1) driver facing api
+    2) passenger facing api
+
+summary - 
+ Customer -> 
+ app -> 
+ book ride -> 
+ matched with driver -> 
+ get in the ride ->
+ track ride -> 
+ time to dest ->
+ reach destination -> 
+ ride complete         
+
+other details ? will get back to this
+new acc ? payment preference ? driver rating ? - No
+fundamental taxing service - Yes
+db entities - ride, passenger
+api - some apis
+
+1) passenger facing api
+passenger -> register for ride -> endpoint - create ride api
+    1) createRide(userId: string, pickUp: Loc, dest: Loc)
+    Ride collection: 
+    rideId, 
+    passengerId (userId), 
+    driverInfo - Obj{driverId, rating} - not immediately - findDriver endpoint, 
+    estimatedPrice, 
+    location,
+    timeValues -  obj{start, end, totalTime},
+    rideStatus - enum { created | matched | cancelled | IN-PROGRESS | Finished }
+    pickUpL,
+    destL
+
+    createRide api -> findDriver api -> editRide api - to edit driver info
+    continous polling - findDriver, editRide to update driverInfo and rideStatus : matched -> getRide endpoint
+    user can take one ride at a time - so only passengerId passed in endpoints
+    
+    2) getRide(passengerId) endpoint 
+    3) cancelRide(passengerId) endpoint - editRide endpoint wrapper -> cancel ride
+
+
+
+2)driver facing api
+- get matched to the ride
+- findDriver endpoint - internal api
+- driver has to be available - driverStatus - available
+
+driver collection
+  status: available | unavailable | in-ride | standby
+
+    1) setDriverStatus(userId: string, driverStatus: ds) endpoint
+       - findRide() - queue | deque - continous polling - until get ride
+           return ride || null
+       once ride object returned -> counter 30s to Driver -> accept ride 
+       - Accept ride(userId) 
+         -> edit ride - driverInfo updated && rideStatus : matched
+       - cancel ride -> findRide() again
+
+- driver's location && passenger's location sharing -> websocket connection
+  -> stream connection
+  -> push location(userId: string)     ->    streamDriverLocation(userId)
+                                       <-
+
+uber pool?
+- multiple passengers
+- single driver = multiple passengers
+- different destinations
+    PoolRide collection: 
+    rides: Array[], -> Ride Obj
+    driverInfo - Obj{driverId, rating} - not immediately - findDriver endpoint, 
+- driver -> capacity in car -> accept multiple rides
+  once capacity full -> no ride api

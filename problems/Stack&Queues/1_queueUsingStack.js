@@ -6,13 +6,19 @@ class Queue {
         this.popStack = new Stack();
         this.size = 0;
     }
-
+    // FIFO
+    // pushStack - [1,2,3,4,5]
+    // popStack = []
+    // size = 5 + 0 = 5
     enqueue(val) {
         this.pushStack.push(val);
         this.size = this.pushStack.length + this.popStack.length;
         
     }
 
+    // deque
+    // pushStack = []
+    // popStack = [5,4,3,2,1]
     dequeue() {
         if (this.popStack.length > 0) {
             this.size = this.pushStack.length + this.popStack.length - 1;
@@ -91,7 +97,7 @@ function enqueue(el) {
 
 function dequeue() {
     if(stack2.length === 0) {
-        if(stack1.length == 0)  { return "Cannot dequeue because queue is empty" }
+        // if(stack1.length == 0)  { return "Cannot dequeue because queue is empty" }
         while(stack1.length > 0) {
             var p = stack1.pop();
             stack2.push(p)
