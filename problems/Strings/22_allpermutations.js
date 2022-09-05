@@ -22,7 +22,6 @@ const permutNumArr = (inputArr) => {
 
     for (var i = 0; i < arr.length; i++) {
       cur = arr.splice(i, 1);
-      console.log(cur)
       if (arr.length === 0) {
         results.push(memo.concat(cur));
       }
