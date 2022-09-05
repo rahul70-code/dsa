@@ -20,11 +20,12 @@ function f(ind, buy, cap, values, n, dp) {
 }
 
 var maxProfit = function (prices) {
-    let n = prices.length
+    let n = prices.length;
+    let cap = 2
     const dp = Array(n + 1)
         .fill(0)
-        .map(() => Array(2).fill(-1).map(() => Array(3).fill(-1)));
-    return f(0, 1, 2, prices, prices.length, dp)
+        .map(() => Array(2).fill(-1).map(() => Array(cap+1).fill(-1)));
+    return f(0, 1, cap, prices, prices.length, dp)
 };
 
 

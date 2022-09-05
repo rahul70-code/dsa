@@ -19,11 +19,11 @@ function f(ind, buy, cap, values, n, dp) {
     return dp[ind][buy][cap] = profit
 }
 
-var maxProfit = function (k,prices) {
+var maxProfit = function (k, prices) {
     let n = prices.length
     const dp = Array(n + 1)
         .fill(0)
-        .map(() => Array(2).fill(-1).map(() => Array(k+1).fill(-1)));
+        .map(() => Array(2).fill(-1).map(() => Array(k + 1).fill(-1)));
     return f(0, 1, k, prices, prices.length, dp)
 };
 
@@ -36,11 +36,11 @@ var maxProfit = function (k,prices) {
  * @return {number}
  */
 
-var maxProfit = function (k,prices) {
+var maxProfit = function (k, prices) {
     let n = prices.length
     const dp = Array(n + 1)
         .fill(0)
-        .map(() => Array(2).fill(-1).map(() => Array(k+1).fill(0)));
+        .map(() => Array(2).fill(-1).map(() => Array(k + 1).fill(0)));
     // changing params - ind, buy, cap
     // copy recurance
     // if cap == 0, ind and buy can be anything
