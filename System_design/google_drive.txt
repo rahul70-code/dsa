@@ -1,1 +1,44 @@
 core google drive
+Requirements
+ignore - ACL, sharing.
+
+Concentrate on 
+- folders and files. implement CRUD operations and downloading on files.
+- Desktop or web app ? - just web.
+- multiple tabs - multiple clients/entities ? same user - 10 sec update accessing same folder/file.
+- scale - how many users serving and storage ? - 1B users and 15GB per user. 
+- Avaibility - No data loss (reduntant), highly available.
+
+design
+1. create folder.
+2. upload/download file.
+3. Move, delete, edit, get file/folder (CRUD operations).
+
+file/folder
+* storage components
+1. metadata (info) - key/value store    
+2. actual content - AWS S3/Google cloud storage
+
+
+1. file/folder metadata 
+ 1) key/value pairs
+ 2) highly available like Zookeeper
+ 3) shard using ownerId (unique id)
+ 4) create folder request - load balancing (ownerId) - hash on this
+ 5) Proxies K/V store - caching - between LB - KV stores.
+ 6) Properties - file/folder
+      {
+        name_entity: string, 
+        ownerId: id, 
+        children: Array,
+        isFolder: Boolean
+       }
+       
+
+2. storing file data
+  1) upload file.
+  2) 15B * 15GB = 15000 PB with no data loss. - multiple data zones.
+  minimum 3 sources of truth - 50000 PB of data.
+  optimiztion - logic to not store same file twice across globe.
+  two user uploading same data - save 1 file but access give to two user.
+  API servers - split files into blobs (smaller) -> logic size of blobs 

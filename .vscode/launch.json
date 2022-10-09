@@ -6,8 +6,8 @@
     "configurations": [
         
         {
-            "command": "node problems/32_countAndSay.js",
-            "name": "node problems/32_countAndSay.js",
+            "command": "node problemsAll/merge2sortedarrays.js",
+            "name": "node problemsAll/merge2sortedarrays.js",
             "request": "launch",
             "type": "node-terminal"
             }
