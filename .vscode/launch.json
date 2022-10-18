@@ -6,8 +6,8 @@
     "configurations": [
         
         {
-            "command": "node problemsAll/merge2sortedarrays.js",
-            "name": "node problemsAll/merge2sortedarrays.js",
+            "command": "node problems/backtracking/1531_stringcompression2.js",
+            "name": "node problems/backtracking/1531_stringcompression2.js",
             "request": "launch",
             "type": "node-terminal"
             }
