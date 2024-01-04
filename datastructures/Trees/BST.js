@@ -217,7 +217,7 @@ class BinarySearchTree {
     };
     return current.val;
   }
-
+  // height of bst
   maxDepth(node = this.root) {
     if (node == null) return 0;
     else {

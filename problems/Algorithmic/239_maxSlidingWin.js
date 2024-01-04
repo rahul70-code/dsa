@@ -23,9 +23,9 @@ var maxSlidingWindowQueue = function(nums, k) {
     let q = []
     let result = []
    for(let i=0;i<nums.length;i++) {
-    while(q && nums[q[q.length-1]] <= nums[i]) q.pop();
+    while(q && nums[q[q.length-1]] <= nums[i]) q.pop(); // remove smaller elements fro queue
     q.push(i);
-    if(q[0] == i-k) q.shift();
+    if(q[0] == i-k) q.shift(); // out of bound condition
     if(i >= k-1) result.push(nums[q[0]])
    }
     return result

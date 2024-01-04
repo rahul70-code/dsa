@@ -12,10 +12,10 @@
     for(let i=0;i<m && j<n;i++) {
         if(s[j]==t[i]) j++
     }
-    return (j==n);
+    return t.length == 1 && j == 0 ? 0 :  t.length-j;
 };
 
 
 
-let result = isSubsequence("acb", "gdcacb")
+let result = isSubsequence("lbg","g")
 console.log(result)

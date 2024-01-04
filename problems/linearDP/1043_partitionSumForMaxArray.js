@@ -8,7 +8,6 @@
 // memoization
 function maxSum(ind, arr, k, n, sum) {
     if (ind == n || k == 0) return sum;
-    console.log(sum)
 
     // pick
     let pick = sum + maxSum(ind, arr, k - 1, n, sum + arr[ind])
@@ -20,7 +19,7 @@ function maxSum(ind, arr, k, n, sum) {
 }
 
 
-var maxSumAfterPartitioning = function (arr, k) {
+var maxSumAfterPartitioning1 = function (arr, k) {
     let sum = 0;
     let n = arr.length;
     return maxSum(0, arr, k, n, sum)
@@ -46,4 +45,4 @@ var maxSumAfterPartitioning = function (arr, k) {
     return dp[0]
 };
 
-console.log(maxSumAfterPartitioning([1, 15, 7, 9, 2, 5, 10], 3))
+console.log(maxSumAfterPartitioning1([1,5,4,2,9,9,9], 3))

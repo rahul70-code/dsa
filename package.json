@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/rahul70-code/dsa#readme",
   "dependencies": {
+    "@datastructures-js/priority-queue": "^6.1.4",
     "queue": "^6.0.2"
   }
 }

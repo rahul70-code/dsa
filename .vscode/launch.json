@@ -6,8 +6,8 @@
     "configurations": [
         
         {
-            "command": "node problems/backtracking/1531_stringcompression2.js",
-            "name": "node problems/backtracking/1531_stringcompression2.js",
+            "command": "node problems/linearDP/5_longestPalindromicSubstring.js",
+            "name": "node problems/linearDP/5_longestPalindromicSubstring.js",
             "request": "launch",
             "type": "node-terminal"
             }
